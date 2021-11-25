@@ -5,10 +5,12 @@ export default function useAuth(code) {
   const [accessToken, setAccessToken] = useState()
   const [refreshToken, setRefreshToken] = useState()
   const [expiresIn, setExpiresIn] = useState()
+  console.log("SHOW CODE >>>", code)
+  console.log("SHOW TOKE >>>", accessToken)
 
   useEffect(() => {
     axios
-      .post(`${window.location.hostname}?${code}/login`, {
+      .post(`http://localhost:3001/login`, {
         code,
       })
       .then(res => {
@@ -26,7 +28,7 @@ export default function useAuth(code) {
     if (!refreshToken || !expiresIn) return
     const interval = setInterval(() => {
       axios
-        .post(`${window.location.hostname}${code}/refresh`, {
+        .post(`http://localhost:3001/refresh`, {
           refreshToken,
         })
         .then(res => {
@@ -39,7 +41,7 @@ export default function useAuth(code) {
     }, (expiresIn - 60) * 1000)
 
     return () => clearInterval(interval)
-  }, [refreshToken, expiresIn, code])
+  }, [refreshToken, expiresIn])
 
   return accessToken
 }

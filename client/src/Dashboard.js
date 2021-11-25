@@ -27,7 +27,7 @@ export default function Dashboard({ code }) {
     if (!playingTrack) return
 
     axios
-      .get(`${window.location.hostname}${code}/lyrics`, {
+      .get(`http://localhost:3001/lyrics`, {
         params: {
           track: playingTrack.title,
           artist: playingTrack.artist,
@@ -36,7 +36,7 @@ export default function Dashboard({ code }) {
       .then(res => {
         setLyrics(res.data.lyrics)
       })
-  }, [playingTrack, code])
+  }, [playingTrack])
 
   useEffect(() => {
     if (!accessToken) return
