@@ -27,7 +27,7 @@ export default function Dashboard({ code }) {
     if (!playingTrack) return
 
     axios
-      .get("https://dotify-hyperxtend.herokuapp.com/lyrics", {
+      .get(`${window.location.hostname}/lyrics`, {
         params: {
           track: playingTrack.title,
           artist: playingTrack.artist,
