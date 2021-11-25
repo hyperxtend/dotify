@@ -1,0 +1,22 @@
+h1 {
+  font: 800 3rem Montserrat, sans-serif;
+  letter-spacing: -0.07ex;
+  animation: anim 5s infinite alternate ease-in-out;
+  margin-bottom: 35%;
+}
+
+@keyframes anim {
+  from {
+    text-shadow: 0 0 10px transparent;
+  }
+  to {
+    text-shadow: 0 28px 50px rgba(0, 0, 0, 0.8);
+  }
+}
+
+.login-container {
+  display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
