@@ -8,7 +8,7 @@ export default function useAuth(code) {
 
   useEffect(() => {
     axios
-      .post("https://dotify-hyperxtend.herokuapp.com/login", {
+      .post("/login", {
         code,
       })
       .then(res => {
@@ -26,7 +26,7 @@ export default function useAuth(code) {
     if (!refreshToken || !expiresIn) return
     const interval = setInterval(() => {
       axios
-        .post("https://dotify-hyperxtend.herokuapp.com/refresh", {
+        .post("/refresh", {
           refreshToken,
         })
         .then(res => {
