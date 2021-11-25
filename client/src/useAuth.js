@@ -8,7 +8,7 @@ export default function useAuth(code) {
 
   useEffect(() => {
     axios
-      .post("https://dotify-hyperxtend.herokuapp.com//login", {
+      .post("https://dotify-hyperxtend.herokuapp.com/login", {
         code,
       })
       .then(res => {
@@ -26,7 +26,7 @@ export default function useAuth(code) {
     if (!refreshToken || !expiresIn) return
     const interval = setInterval(() => {
       axios
-        .post("https://dotify-hyperxtend.herokuapp.com//refresh", {
+        .post("https://dotify-hyperxtend.herokuapp.com/refresh", {
           refreshToken,
         })
         .then(res => {
@@ -34,7 +34,7 @@ export default function useAuth(code) {
           setExpiresIn(res.data.expiresIn)
         })
         .catch(() => {
-          window.location = "https://dotify-hyperxtend.herokuapp.com/"
+          window.location = "/"
         })
     }, (expiresIn - 60) * 1000)
 
