@@ -12,10 +12,11 @@ export default function useAuth(code) {
         code,
       })
       .then(res => {
+        console.log("LOGIN RES >>>", res);
         setAccessToken(res.data.accessToken)
         setRefreshToken(res.data.refreshToken)
         setExpiresIn(res.data.expiresIn)
-        window.history.pushState({}, null, "/")
+        window.history.pushState({}, null, "https://dotify-hyperxtend.herokuapp.com/")
       })
       .catch(() => {
         window.location = "/"
@@ -30,6 +31,8 @@ export default function useAuth(code) {
           refreshToken,
         })
         .then(res => {
+          console.log("TOKEN REFRESH RES >>>", res);
+
           setAccessToken(res.data.accessToken)
           setExpiresIn(res.data.expiresIn)
         })
