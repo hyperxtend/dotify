@@ -79,7 +79,7 @@ export default function Dashboard({ code }) {
         type="search"
         placeholder="Search by Song/Artist..."
         value={search}
-        onChange={e => setSearch(e.target.value)}
+        onChange={event => setSearch(event.target.value)}
       />
       <div className="flex-grow-1 my-2" style={{ overflowY: "auto", overflowX: "hidden", width:"100%", fontSize: "0.8rem" }}>
         {searchResults.map(track => (
