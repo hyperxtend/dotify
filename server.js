@@ -7,7 +7,7 @@ const SpotifyWebApi = require("spotify-web-api-node")
 
 const app = express()
 
-const whitelist = ['http://localhost:3000', 'http://localhost:8080',]
+const whitelist = ['http://localhost:3000', 'http://localhost:8080', "https://dotify-hyperxtend.herokuapp.com/"]
 const corsOptions = {
   origin: function (origin, callback) {
     console.log("** Origin of request " + origin)
@@ -28,7 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 
 const path = require("path")
 const port = process.env.PORT || 3001
-
 
 
 
