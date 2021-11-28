@@ -4,9 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install", 
     "heroku-postbuild": "cd client && npm install --only-dev --no-shrinkwrap && npm run build", 
     "start-server": "nodemon server.js",
-    "start": "node server.js"
+    "start": "nodemon server.js"
   },
   "keywords": [],
   "author": "Alex Joshua",
