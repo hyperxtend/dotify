@@ -34,6 +34,7 @@ export default function Dashboard({ code }) {
         },
       })
       .then(res => {
+        console.log("LYRICS RES >>>", res);
         setLyrics(res.data.lyrics)
       })
   }, [playingTrack])
