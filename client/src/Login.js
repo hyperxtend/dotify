@@ -9,7 +9,7 @@ export default function Login() {
   return (
     <Container
       className="d-flex justify-content-center align-items-center"
-      style={{ minHeight: "100vh" }}
+      style={{ height: "100vh" }}
     >
       <div className="login-container">
       <h1>dotify</h1>
