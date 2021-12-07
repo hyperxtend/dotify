@@ -5,7 +5,6 @@ import Dashboard from "./Dashboard"
 const code = new URLSearchParams(window.location.search).get("code")
 
 function App() {
-  console.log("CLIENT CODE >>>", code);
   return code ? <Dashboard code={code} /> : <Login />
 }
 

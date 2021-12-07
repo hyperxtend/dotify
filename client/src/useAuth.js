@@ -12,7 +12,6 @@ export default function useAuth(code) {
         code,
       })
       .then(res => {
-        console.log("LOGIN RES >>>", res);
         setAccessToken(res.data.accessToken)
         setRefreshToken(res.data.refreshToken)
         setExpiresIn(res.data.expiresIn)
@@ -31,8 +30,6 @@ export default function useAuth(code) {
           refreshToken,
         })
         .then(res => {
-          console.log("TOKEN RES >>>", res);
-
           setAccessToken(res.data.accessToken)
           setExpiresIn(res.data.expiresIn)
         })
